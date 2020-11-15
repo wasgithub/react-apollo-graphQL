@@ -52,6 +52,12 @@ export default function CharacterTable(props: Props): ReactElement {
             <TableCell>
               <strong>Location</strong>
             </TableCell>
+            <TableCell>
+              <strong>Price</strong>
+            </TableCell>
+            <TableCell>
+              <strong>Quantity</strong>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

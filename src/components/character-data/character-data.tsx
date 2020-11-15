@@ -3,12 +3,13 @@ import { Character, Maybe } from '../../generated/graphql';
 import {
   TableRow,
   TableCell,
-  Box,
-  createStyles,
-  Theme,
   makeStyles,
+  Theme,
+  createStyles,
+  Box,
   Typography,
 } from '@material-ui/core';
+import CharacterQuantity from '../character-quantity/character-quantity';
 
 interface Props {
   character: Maybe<Character | null>;
@@ -47,6 +48,13 @@ export default function CharacterData(props: Props): ReactElement {
       <TableCell>{props.character?.species}</TableCell>
       <TableCell>{props.character?.origin?.name}</TableCell>
       <TableCell>{props.character?.location?.name}</TableCell>
+      <TableCell>{props.character?.unitPrice}</TableCell>
+      <TableCell>
+        <CharacterQuantity
+          characterId={props.character?.id!}
+          chosenQuantity={props.character?.chosenQuantity!}
+        />
+      </TableCell>
     </TableRow>
   );
 }
